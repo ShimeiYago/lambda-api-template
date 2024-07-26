@@ -1,0 +1,2 @@
+awslambdaric # This is mandatory
+# Please add any Python liblary here
