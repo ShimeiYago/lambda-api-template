@@ -41,11 +41,18 @@ docker build -t lambda-api .
 
 1. **Run Container**
 ```
-docker run --rm -p 8000:8080 lambda-api:latest
+docker run --rm -p 8000:8080 \
+	-v "$PWD/aws-lambda-rie:/usr/bin/aws-lambda-rie" \
+	lambda-api:latest
 ```
 
 Then POST `localhost:8000/2015-03-31/functions/function/invocations` is available.
-(Request body is "{}" for template.)
+
+```bash
+curl -X POST "http://localhost:8000/2015-03-31/functions/function/invocations" \
+  -H "Content-Type: application/json" \
+  -d '{}'
+```
 
 ## Deployment
 

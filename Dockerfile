@@ -12,7 +12,6 @@ RUN mkdir ${APP_DIR}
 COPY app.py ${APP_DIR}
 
 COPY ./entry_script.sh /entry_script.sh
-ADD ./aws-lambda-rie /usr/bin/aws-lambda-rie
 
 WORKDIR ${APP_DIR}
 
