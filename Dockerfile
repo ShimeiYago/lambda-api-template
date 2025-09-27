@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 RUN apt-get update && apt-get install -y python3-pip
 
@@ -12,7 +12,6 @@ RUN mkdir ${APP_DIR}
 COPY app.py ${APP_DIR}
 
 COPY ./entry_script.sh /entry_script.sh
-ADD ./aws-lambda-rie /usr/bin/aws-lambda-rie
 
 WORKDIR ${APP_DIR}
 
