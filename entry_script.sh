@@ -1,6 +1,7 @@
 #!/bin/sh
+set -e
 if [ -z "${AWS_LAMBDA_RUNTIME_API}" ]; then
-  exec /usr/bin/aws-lambda-rie /usr/bin/python3 -m awslambdaric $@
+  exec /usr/bin/aws-lambda-rie python3 -m awslambdaric "$@"
 else
-  exec /usr/bin/python3 -m awslambdaric $@
+  exec python3 -m awslambdaric "$@"
 fi
